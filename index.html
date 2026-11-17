@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>말씀 묵상 · 매일의 QT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="매일의 말씀을 읽고 네 단계로 묵상하며 기록하는 나만의 QT 노트">
+<meta name="theme-color" content="#F7F1E4" id="metaTheme">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="말씀 묵상">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADoElEQVR4nO3cXU4bMRiG0VB1bVVZRjdQqVSsApVK3UCXQdXFsAQuue5FJAu1eZsEMuPPnnOuEArgxM84P+Ph6vnpcQeHvOs9AOoSB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIje9x5ACb9/fvn3mx8+fV9/JKVYOYjEQXQ1/b+aPPiUcSlzP/VYOYjEQSQOInEQiYNIHETzv5U9hU9ID7JyEImDSBxE4iASB5E4iMRBJA4icRCJg8jH50RWDiJxEImDSBxE243j+vbm4reczLYuh3z1NL/8wYe7+wsNp7r54zgxiL82g/1nG9h2QpkzjtWeCOYOZZ44ur8ymC+UsePoHkQyRyjjxVE2iGTcUIaJY7gmDmr3YohKSscxRxAHDbGclItj4iCSsqGUiGODQSSlQukWhyCO6h7KqnEI4tW6hLJ4HIK4uNVCWSQOQaxm0VC2e8qeo8RBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETTxvHr248p/9aaSuwhPVHlOThrbB+/fl5uJBfUOY7K872cUUoaaeXYVT3mzhrVQMdD/zhqzvdyBiqp8wvSrZVxrr6Pz7TvVng7cRCJg0gcROIgEgeROIjEQSQOInEQTRuH/Rxv1//E2+kqz8EoZ+HPYj9HB6OUNNLKsat6zA10Fv4s/eOoOd/LGagk+zlKs5+DosRBJA4icRCJg0gcROIgEgeROIjEQTRtHPZzvF3/E2+nqzwHo5yFP4v9HB2MUtJIK8eu6jE30Fn4s/SPo+Z8L2egkuznKM1+DooSB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIFtlg/HB3v//i+vZmid/PS+3Rvrhld5+rZDnLNdGsdGmCSi5lhSaata9bUcnrrNlE0+2ipv29lchRXbLY63zFm4Uk6dhE0/9yyD2V7FVooqkSR7PNSko10ZSLo9lCJTWbaOrG0cxXSfEmmgHiaEavZJQmmpHiaMaqZLgmmiHjaCpXMm4TzdhxNHUqmaCJZpI4mo4fvM6Uxd5sceytuZDM10QzZxzNcpVM3EQzeRzNpSrZQhPNVuJoXlfJpppotruH9PT53mYZu93u6vnpsfcYKGq7KwdHiYNIHETiIBIHkTiIxEEkDiJxEImDSBxEfwDqyf+ah/r7MgAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F6EEDE'/%3E%3Cpath d='M31 20h2v26h-2z' fill='%23B08D4F'/%3E%3Cpath d='M31 20h2v6h-2z' fill='%23B08D4F'/%3E%3Cpath d='M26 12h12v4H26zM30 10h4v10h-4z' fill='%23B08D4F'/%3E%3Cpath d='M29 22l-17 4v20l17 4zM35 22l17 4v20l-17 4z' fill='%233F6350'/%3E%3C/svg%3E">
+<style>
+  /* ---------- base ---------- */
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --paper:#F7F1E4; --paper-2:#F0E7D5; --card:#FFFCF5;
+    --ink:#241F19; --ink-soft:#5C5246; --ink-faint:#8C8172;
+    --line:#E6DBC5; --line-soft:#EFE7D6;
+    --accent:#8A6535; --accent-2:#3F6350; --gold:#B08D4F;
+    --bar:rgba(247,241,228,.86); --shadow:rgba(60,45,20,.10);
+    --serif:"Nanum Myeongjo","Noto Serif KR","AppleMyungjo","Apple SD Gothic Neo",ui-serif,Georgia,serif;
+    --sans:"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",system-ui,-apple-system,sans-serif;
+    --safe-b:env(safe-area-inset-bottom,0px);
+  }
+  html[data-theme="light"]{color-scheme:light}
+  html[data-theme="dark"]{color-scheme:dark;
+    --paper:#16140F; --paper-2:#1D1A14; --card:#221E17;
+    --ink:#EFE6D5; --ink-soft:#C3B7A3; --ink-faint:#8E8371;
+    --line:#352E23; --line-soft:#2B251C;
+    --accent:#D9B47C; --accent-2:#8FBBA4; --gold:#D3AE74;
+    --bar:rgba(22,20,15,.86); --shadow:rgba(0,0,0,.5);
+  }
+  html{-webkit-text-size-adjust:100%;font-size:16px;scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:1rem; line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    padding-bottom:calc(96px + var(--safe-b));
+    overflow-x:hidden;
+  }
+  body::after{
+    content:""; position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  html[data-theme="dark"] body::after{opacity:.06}
+  button{font-family:inherit; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+  [hidden]{display:none !important}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+  /* ---------- shell ---------- */
+  .wrap{max-width:700px; margin:0 auto; padding:0 18px}
+
+  .topbar{position:sticky; top:0; z-index:50; background:var(--bar); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-soft)}
+  .topbar-in{max-width:700px; margin:0 auto; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:10px}
+  .brand{display:flex; align-items:center; gap:10px; min-width:0}
+  .brand-mark{width:32px; height:32px; border-radius:10px; background:var(--accent-2); display:grid; place-items:center; flex:0 0 auto; box-shadow:0 4px 10px -6px var(--accent-2)}
+  .brand-mark svg{width:19px; height:19px; display:block; stroke:#fff}
+  html[data-theme="dark"] .brand-mark svg{stroke:#101F18}
+  .brand-t{display:flex; flex-direction:column; line-height:1.15; min-width:0}
+  .brand-t b{font-family:var(--serif); font-size:1.02rem; font-weight:600; letter-spacing:-.01em}
+  .brand-t span{font-size:.62rem; letter-spacing:.16em; color:var(--ink-faint); text-transform:uppercase}
+  .top-actions{display:flex; align-items:center; gap:6px}
+  .icon-btn{width:37px; height:37px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink-soft); display:grid; place-items:center; cursor:pointer; transition:transform .15s, border-color .15s, color .15s}
+  .icon-btn:active{transform:scale(.94)}
+  .icon-btn:hover{border-color:var(--accent); color:var(--accent)}
+  .icon-btn svg{width:17px; height:17px; display:block}
+  .icon-btn .fontglyph{font-family:var(--serif); font-size:.95rem; font-weight:700; line-height:1}
+
+  /* ---------- views ---------- */
+  main{padding-top:16px}
+  .view[hidden]{display:none}
+  .view-title{font-family:var(--serif); font-size:1.3rem; margin:2px 0 4px; letter-spacing:-.01em}
+  .view-sub{font-size:.82rem; color:var(--ink-faint); margin:0 0 16px}
+
+  /* ---------- date bar ---------- */
+  .datebar{display:flex; align-items:center; gap:8px; margin-bottom:12px}
+  .datebtn{width:40px; height:40px; flex:0 0 auto; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink-soft); display:grid; place-items:center; cursor:pointer}
+  .datebtn:active{transform:scale(.94)}
+  .datebtn svg{width:16px; height:16px}
+  .date-center{flex:1; text-align:center; min-width:0}
+  .date-center .d1{font-family:var(--serif); font-size:1.06rem; letter-spacing:-.01em}
+  .date-center .d2{font-size:.7rem; color:var(--ink-faint); letter-spacing:.04em; margin-top:1px}
+  .chips{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:14px; flex-wrap:wrap}
+  .chip{display:inline-flex; align-items:center; gap:6px; font-size:.74rem; font-weight:600; padding:6px 11px; border-radius:999px; background:var(--paper-2); color:var(--accent); border:1px solid var(--line)}
+  .chip .dot{width:5px; height:5px; border-radius:50%; background:var(--accent-2); flex:0 0 auto}
+  .chip-btn{border:1px solid var(--line); background:var(--card); color:var(--ink-soft); font-size:.74rem; font-weight:600; padding:6px 12px; border-radius:999px; cursor:pointer}
+  .chip-btn:hover{color:var(--accent); border-color:var(--accent)}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px 20px; margin-bottom:16px; box-shadow:0 1px 2px var(--shadow), 0 18px 34px -30px var(--shadow)}
+  .passage-card{position:relative; overflow:hidden}
+  .passage-card::before{content:""; position:absolute; left:0; right:0; top:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--accent-2),transparent); opacity:.5}
+  .eyebrow{display:flex; align-items:center; gap:8px; font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .eyebrow .day{margin-left:auto; letter-spacing:.1em; color:var(--ink-faint); font-weight:600}
+  .p-title{text-wrap:balance; font-family:var(--serif); font-size:1.36rem; line-height:1.42; margin:10px 0 5px; letter-spacing:-.015em; font-weight:600; word-break:keep-all}
+  .p-ref{font-size:.82rem; color:var(--ink-faint)}
+  .verse{margin-top:16px; padding-top:16px; border-top:1px dashed var(--line); font-family:var(--serif); font-size:1.11rem; line-height:1.98; color:var(--ink); letter-spacing:-.003em}
+  .verse p{margin:0 0 .62em; word-break:keep-all; text-wrap:pretty}
+  .verse.multi p{padding-left:1.35em; text-indent:-1.35em}
+  .verse p:last-child{margin-bottom:0}
+  .verse .vn{font-family:var(--sans); font-size:.6rem; font-weight:700; color:var(--accent); vertical-align:super; margin-right:.32em; letter-spacing:.02em}
+  .p-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:7px; border-radius:12px; padding:11px 15px; font-size:.86rem; font-weight:600; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; transition:transform .12s, background .15s, border-color .15s}
+  .btn:active{transform:scale(.98)}
+  .btn svg{width:15px; height:15px}
+  .btn.primary{background:var(--accent-2); border-color:transparent; color:#fff; box-shadow:0 10px 20px -14px var(--accent-2)}
+  html[data-theme="dark"] .btn.primary{color:#12211A}
+  .btn.ghost{background:transparent; color:var(--ink-soft)}
+  .btn.tiny{padding:7px 11px; font-size:.75rem; border-radius:10px}
+  .btn.on{background:var(--paper-2); color:var(--accent); border-color:var(--accent)}
+  .reflection{margin-top:20px; padding-top:18px; border-top:1px dashed var(--line)}
+  .reflection h2{font-size:.72rem; letter-spacing:.14em; color:var(--ink-faint); font-weight:700; margin:0 0 12px}
+  .qlist{list-style:none; margin:0; padding:0; counter-reset:q}
+  .qlist li{position:relative; padding-left:27px; margin-bottom:11px; font-size:.92rem; line-height:1.68; color:var(--ink-soft); word-break:keep-all; text-wrap:pretty}
+  .qlist li:last-child{margin-bottom:0}
+  .qlist li::before{counter-increment:q; content:counter(q); position:absolute; left:0; top:.18em; width:18px; height:18px; border-radius:50%; background:var(--accent-2); color:#fff; font-size:.6rem; font-weight:700; display:grid; place-items:center}
+  html[data-theme="dark"] .qlist li::before{color:#12211A}
+  .custom-tag{display:inline-flex; align-items:center; gap:6px; font-size:.68rem; color:var(--accent); background:var(--paper-2); border:1px solid var(--line); border-radius:999px; padding:4px 9px; margin-left:6px}
+
+  /* ---------- journal ---------- */
+  .j-head{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:6px}
+  .j-head h2{font-family:var(--serif); font-size:1.14rem; margin:0; letter-spacing:-.01em}
+  .j-sub{font-size:.76rem; color:var(--ink-faint); margin:0}
+  .status-pill{font-size:.68rem; font-weight:700; padding:4px 10px; border-radius:999px; border:1px solid var(--line); color:var(--ink-faint); white-space:nowrap}
+  .status-pill.done{background:var(--accent-2); border-color:transparent; color:#fff}
+  html[data-theme="dark"] .status-pill.done{color:#12211A}
+  .save-state{font-size:.68rem; color:var(--ink-faint); min-height:1.1em; margin:6px 0 14px; letter-spacing:.01em; display:flex; align-items:center; gap:5px}
+  .save-state .pulse{width:5px; height:5px; border-radius:50%; background:var(--accent-2); opacity:0; transition:opacity .2s}
+  .save-state.busy .pulse{opacity:1}
+  .step{margin-bottom:18px}
+  .step:last-of-type{margin-bottom:6px}
+  .step-label{display:flex; align-items:center; gap:8px; font-size:.79rem; font-weight:700; color:var(--ink-soft); margin-bottom:7px}
+  .step-num{width:21px; height:21px; border-radius:7px; background:var(--paper-2); color:var(--accent); display:grid; place-items:center; font-size:.66rem; font-family:var(--sans); border:1px solid var(--line); flex:0 0 auto; transition:.2s}
+  .step.filled .step-num{background:var(--accent-2); color:#fff; border-color:transparent}
+  html[data-theme="dark"] .step.filled .step-num{color:#12211A}
+  textarea{width:100%; min-height:92px; scroll-margin-bottom:130px; resize:vertical; padding:12px 14px; border-radius:14px; border:1px solid var(--line); background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:1rem; line-height:1.72; outline:none; transition:border-color .15s, box-shadow .15s}
+  textarea::placeholder{color:var(--ink-faint); opacity:.75}
+  textarea:focus{border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent)}
+  .j-actions{display:flex; align-items:center; gap:8px; margin-top:18px; flex-wrap:wrap}
+  .j-actions .btn{flex:1 1 auto}
+  .j-actions .btn.primary{flex:2 1 160px}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:16px}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 10px; text-align:center; box-shadow:0 12px 26px -26px var(--shadow)}
+  .stat strong{display:block; font-family:var(--serif); font-size:1.62rem; line-height:1.1; font-weight:600; color:var(--accent)}
+  .stat span{display:block; font-size:.7rem; color:var(--ink-faint); margin-top:4px; letter-spacing:.02em}
+  .stat.accent-green strong{color:var(--accent-2)}
+
+  /* ---------- calendar ---------- */
+  .cal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px}
+  .cal-head b{font-family:var(--serif); font-size:1.06rem; font-weight:600}
+  .cal-head .cal-nav{display:flex; gap:6px}
+  .cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:5px}
+  .wd{text-align:center; font-size:.66rem; color:var(--ink-faint); padding-bottom:6px; letter-spacing:.04em}
+  .wd.sun{color:#B4563F}
+  .day{aspect-ratio:1/1; border:1px solid transparent; border-radius:12px; background:transparent; color:var(--ink-soft); font-size:.86rem; font-family:var(--sans); cursor:pointer; display:flex; align-items:center; justify-content:center; position:relative; padding:0; transition:.15s}
+  .day:hover{background:var(--paper-2)}
+  .day.empty{visibility:hidden; cursor:default}
+  .day.done{background:var(--accent-2); color:#fff; font-weight:700}
+  html[data-theme="dark"] .day.done{color:#101F18}
+  .day.done:hover{background:var(--accent-2); filter:brightness(1.06)}
+  .day.draft{border-color:var(--accent); color:var(--accent); font-weight:700}
+  .day.today{box-shadow:inset 0 0 0 2px var(--gold)}
+  .day.sel{outline:2px solid var(--accent); outline-offset:3px}
+  .day.future{opacity:.55}
+  .legend{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:.7rem; color:var(--ink-faint)}
+  .legend i{display:inline-block; width:9px; height:9px; border-radius:3px; margin-right:5px; vertical-align:-1px}
+  .legend .l-done{background:var(--accent-2)} .legend .l-draft{border:1.5px solid var(--accent)} .legend .l-today{box-shadow:inset 0 0 0 2px var(--gold)}
+
+  .cal-detail{margin-top:16px; padding-top:16px; border-top:1px dashed var(--line)}
+  .cal-detail h3{font-family:var(--serif); font-size:1rem; margin:0 0 2px}
+  .cal-detail .cd-ref{font-size:.74rem; color:var(--ink-faint); margin-bottom:12px}
+  .cd-block{margin-bottom:12px}
+  .cd-block .k{font-size:.68rem; letter-spacing:.1em; color:var(--accent); font-weight:700; margin-bottom:3px}
+  .cd-block .v{font-size:.9rem; color:var(--ink-soft); white-space:pre-wrap; line-height:1.7; word-break:break-word}
+  .cd-empty{font-size:.86rem; color:var(--ink-faint); margin:6px 0 12px}
+
+  /* ---------- records ---------- */
+  .rec{display:block; width:100%; text-align:left; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; margin-bottom:10px; cursor:pointer; color:inherit; font-family:inherit; transition:border-color .15s, transform .12s}
+  .rec:hover{border-color:var(--accent)}
+  .rec:active{transform:scale(.995)}
+  .rec-top{display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.71rem; color:var(--ink-faint); letter-spacing:.03em}
+  .rec-top .badge{font-size:.62rem; font-weight:700; padding:2px 8px; border-radius:999px; background:var(--paper-2); color:var(--accent)}
+  .rec-top .badge.done-b{background:var(--accent-2); color:#fff}
+  html[data-theme="dark"] .rec-top .badge.done-b{color:#12211A}
+  .rec-title{font-family:var(--serif); font-size:1.02rem; margin:5px 0 5px; letter-spacing:-.01em; word-break:keep-all}
+  .rec-snip{font-size:.84rem; color:var(--ink-soft); line-height:1.65; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; word-break:keep-all}
+  .empty{text-align:center; padding:40px 18px; color:var(--ink-faint)}
+  .empty .em-mark{font-family:var(--serif); font-size:1.6rem; color:var(--accent); opacity:.5; display:block; margin-bottom:8px}
+  .empty p{font-size:.88rem; margin:0; line-height:1.7}
+
+  /* ---------- tabbar ---------- */
+  .tabbar{position:fixed; left:50%; transform:translateX(-50%); bottom:calc(12px + var(--safe-b)); z-index:70; width:min(400px, calc(100% - 26px)); display:flex; gap:3px; padding:5px; background:var(--bar); -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); border:1px solid var(--line); border-radius:19px; box-shadow:0 14px 34px -14px var(--shadow)}
+  .tab{flex:1; border:0; background:transparent; color:var(--ink-faint); font-family:inherit; font-size:.68rem; font-weight:700; letter-spacing:.02em; padding:8px 2px 7px; border-radius:14px; display:flex; flex-direction:column; align-items:center; gap:3px; cursor:pointer; transition:.18s}
+  .tab svg{width:19px; height:19px}
+  .tab.active{background:var(--card); color:var(--accent); box-shadow:0 2px 10px -6px var(--shadow)}
+  .tab.active svg{color:var(--accent-2)}
+
+  /* ---------- sheet ---------- */
+  .overlay{position:fixed; inset:0; z-index:100; background:rgba(28,21,10,.45); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); display:flex; align-items:flex-end; justify-content:center; animation:fade .18s ease}
+  .overlay[hidden]{display:none}
+  .sheet{width:100%; max-width:540px; max-height:88vh; overflow-y:auto; -webkit-overflow-scrolling:touch; background:var(--card); border-radius:22px 22px 0 0; padding:20px 20px calc(24px + var(--safe-b)); animation:up .24s cubic-bezier(.22,.8,.28,1); box-shadow:0 -10px 40px rgba(0,0,0,.18)}
+  @media (min-width:620px){ .overlay{align-items:center; padding:24px} .sheet{border-radius:20px; padding-bottom:24px} }
+  .sheet-head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:16px}
+  .sheet-head h2{font-family:var(--serif); font-size:1.1rem; margin:0; font-weight:600}
+  .sheet-close{width:32px; height:32px; border-radius:50%; border:0; background:var(--paper-2); color:var(--ink-soft); display:grid; place-items:center; cursor:pointer; flex:0 0 auto}
+  .sheet-close svg{width:14px; height:14px}
+  .field{margin-bottom:14px}
+  .field > label{display:block; font-size:.73rem; font-weight:700; color:var(--ink-soft); margin-bottom:6px; letter-spacing:.02em}
+  .field input[type=text], .field textarea{width:100%; padding:11px 13px; border-radius:12px; border:1px solid var(--line); background:var(--paper); color:var(--ink); font-family:inherit; font-size:.92rem; line-height:1.65; outline:none}
+  .field textarea{min-height:110px; resize:vertical}
+  .field input[type=text]:focus, .field textarea:focus{border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent)}
+  .hint{font-size:.72rem; color:var(--ink-faint); margin-top:5px; line-height:1.55}
+  .seg{display:flex; gap:4px; background:var(--paper-2); padding:4px; border-radius:13px; border:1px solid var(--line)}
+  .seg-btn{flex:1; border:0; background:transparent; padding:9px 4px; border-radius:10px; font-family:inherit; font-size:.82rem; font-weight:600; color:var(--ink-soft); cursor:pointer; transition:.15s}
+  .seg-btn.on{background:var(--card); color:var(--accent); box-shadow:0 2px 8px -6px var(--shadow)}
+  .sheet-actions{display:flex; gap:8px; margin-top:18px; flex-wrap:wrap}
+  .sheet-actions .btn{flex:1 1 auto}
+  .sheet-actions .btn.danger{color:#A64234; border-color:#E3C4BC}
+  .sheet-actions .btn.danger:hover{background:#FBEDEA}
+  .row-line{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 0; border-bottom:1px solid var(--line-soft)}
+  .row-line:last-child{border-bottom:0}
+  .row-line .rl-t{font-size:.9rem; font-weight:600}
+  .row-line .rl-s{font-size:.72rem; color:var(--ink-faint); margin-top:2px; line-height:1.5}
+  .note{font-size:.74rem; color:var(--ink-faint); line-height:1.6; margin:10px 0 0}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.72rem; min-height:140px}
+
+  /* ---------- toast ---------- */
+  .toast{position:fixed; left:50%; bottom:calc(86px + var(--safe-b)); transform:translate(-50%, 12px); z-index:200; max-width:88%; background:rgba(34,27,16,.94); color:#FFF8EA; padding:11px 18px; border-radius:999px; font-size:.82rem; font-weight:500; line-height:1.5; text-align:center; opacity:0; pointer-events:none; transition:opacity .22s, transform .22s; box-shadow:0 12px 30px -12px rgba(0,0,0,.5)}
+  .toast.show{opacity:1; transform:translate(-50%, 0)}
+  html[data-theme="dark"] .toast{background:rgba(240,231,214,.95); color:#241F19}
+
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @keyframes up{from{transform:translateY(18px); opacity:.6}to{transform:translateY(0); opacity:1}}
+  @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important} html{scroll-behavior:auto} }
+  @media (max-width:380px){
+    .wrap{padding:0 13px}
+    .card{padding:18px 15px; border-radius:17px}
+    .p-title{font-size:1.24rem}
+    .verse{font-size:1.05rem}
+  }
+  #journalCard{scroll-margin-top:76px}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"><path d="M12 6.2c-1.9-1.4-4.3-1.9-6.6-1.6v12c2.3-.3 4.7.2 6.6 1.6 1.9-1.4 4.3-1.9 6.6-1.6v-12c-2.3-.3-4.7.2-6.6 1.6Z"/><path d="M12 6.2v11.6"/></svg>
+      </span>
+      <div class="brand-t">
+        <b>말씀 묵상</b>
+        <span>Daily QT</span>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="btnFont" type="button" aria-label="글자 크기 바꾸기" title="글자 크기"><span class="fontglyph" id="fontGlyph">가</span></button>
+      <button class="icon-btn" id="btnTheme" type="button" aria-label="테마 바꾸기" title="다크/라이트 모드">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg>
+      </button>
+      <button class="icon-btn" id="btnMenu" type="button" aria-label="설정 열기" title="설정">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="18.5" cy="12" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ============ 오늘의 말씀 ============ -->
+  <section id="view-today" class="view" aria-label="오늘의 말씀">
+    <div class="datebar">
+      <button class="datebtn" id="prevDay" type="button" aria-label="이전 날">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>
+      </button>
+      <div class="date-center">
+        <div class="d1" id="dateLabel">—</div>
+        <div class="d2" id="dateSub">—</div>
+      </div>
+      <button class="datebtn" id="nextDay" type="button" aria-label="다음 날">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <div class="chips">
+      <span class="chip" id="streakChip"><span class="dot"></span><span id="streakChipText">첫 묵상을 시작해 보세요</span></span>
+      <button class="chip-btn" id="btnToday" type="button">오늘로</button>
+    </div>
+
+    <article class="card passage-card" id="passageCard">
+      <div class="eyebrow">
+        <span>오늘의 말씀</span>
+        <span id="customTag" class="custom-tag" hidden>직접 쓴 본문</span>
+        <span class="day" id="dayBadge">DAY 1</span>
+      </div>
+      <h1 class="p-title" id="passageTitle">—</h1>
+      <div class="p-ref" id="passageRef">—</div>
+      <div class="verse" id="verseText"></div>
+      <div class="p-actions">
+        <button class="btn" id="btnSpeak" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.2L12 18.5v-13L7.2 9.5H4Z"/><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+          <span id="speakLabel">말씀 듣기</span>
+        </button>
+        <button class="btn ghost tiny" id="btnEditPassage" type="button">본문 수정</button>
+        <button class="btn ghost tiny" id="btnResetPassage" type="button" hidden>원래 본문으로</button>
+      </div>
+      <div class="reflection">
+        <h2>묵상 질문</h2>
+        <ol class="qlist" id="questionList"></ol>
+      </div>
+    </article>
+
+    <article class="card" id="journalCard">
+      <div class="j-head">
+        <div>
+          <h2>나의 묵상</h2>
+          <p class="j-sub">네 단계로 천천히 적어 보세요. 쓰는 대로 자동 저장돼요.</p>
+        </div>
+        <span class="status-pill" id="statusPill">작성 중</span>
+      </div>
+      <div class="save-state" id="saveState"><span class="pulse"></span><span id="saveStateText"></span></div>
+
+      <div class="step" id="step-o">
+        <div class="step-label"><span class="step-num">1</span>오늘 와닿은 구절 · 관찰</div>
+        <textarea id="ta-o" data-field="o" aria-label="오늘 와닿은 구절과 관찰" placeholder="마음에 머문 한 구절을 적고, 그 앞뒤에서 무엇이 보이는지 적어 보세요." rows="4"></textarea>
+      </div>
+      <div class="step" id="step-m">
+        <div class="step-label"><span class="step-num">2</span>나에게 주시는 메시지</div>
+        <textarea id="ta-m" data-field="m" aria-label="나에게 주시는 메시지" placeholder="이 말씀이 오늘의 나에게 어떤 의미인지, 어떤 마음을 건드리는지 적어 보세요." rows="4"></textarea>
+      </div>
+      <div class="step" id="step-a">
+        <div class="step-label"><span class="step-num">3</span>오늘의 적용</div>
+        <textarea id="ta-a" data-field="a" aria-label="오늘의 적용" placeholder="오늘 하루 실제로 해 볼 한 가지를 정해 적어 보세요." rows="3"></textarea>
+      </div>
+      <div class="step" id="step-p">
+        <div class="step-label"><span class="step-num">4</span>짧은 기도문</div>
+        <textarea id="ta-p" data-field="p" aria-label="짧은 기도문" placeholder="받은 말씀을 가지고 주님께 짧게 기도해 보세요." rows="3"></textarea>
+      </div>
+
+      <div class="j-actions">
+        <button class="btn primary" id="btnComplete" type="button" data-done="0">묵상 완료</button>
+        <button class="btn ghost tiny" id="btnClear" type="button">이 날 기록 비우기</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ 묵상 기록 ============ -->
+  <section id="view-records" class="view" aria-label="묵상 기록" hidden>
+    <h1 class="view-title">묵상 기록</h1>
+    <p class="view-sub">남긴 날들을 모아 두었어요. 누르면 그날 기록을 다시 읽고 고칠 수 있어요.</p>
+    <div id="recordList"></div>
+  </section>
+
+  <!-- ============ 달력 ============ -->
+  <section id="view-calendar" class="view" aria-label="달력" hidden>
+    <h1 class="view-title">묵상 달력</h1>
+    <p class="view-sub">완료한 날은 초록으로 채워져요.</p>
+    <div class="stats">
+      <div class="stat accent-green"><strong id="streakNum">0</strong><span>연속 묵상</span></div>
+      <div class="stat"><strong id="totalNum">0</strong><span>누적 완료</span></div>
+      <div class="stat"><strong id="bestNum">0</strong><span>최장 연속</span></div>
+    </div>
+    <div class="card">
+      <div class="cal-head">
+        <b id="calTitle">—</b>
+        <div class="cal-nav">
+          <button class="datebtn" id="calToday" type="button" aria-label="이번 달로" style="width:34px;height:34px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></button>
+          <button class="datebtn" id="calPrev" type="button" aria-label="이전 달" style="width:34px;height:34px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg></button>
+          <button class="datebtn" id="calNext" type="button" aria-label="다음 달" style="width:34px;height:34px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="legend">
+        <span><i class="l-done"></i>묵상 완료</span>
+        <span><i class="l-draft"></i>작성 중</span>
+        <span><i class="l-today"></i>오늘</span>
+      </div>
+      <div id="calDetail"></div>
+    </div>
+  </section>
+</main>
+
+<nav class="tabbar" aria-label="주요 화면">
+  <button class="tab active" data-view="today" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.2c-1.9-1.4-4.3-1.9-6.6-1.6v12c2.3-.3 4.7.2 6.6 1.6 1.9-1.4 4.3-1.9 6.6-1.6v-12c-2.3-.3-4.7.2-6.6 1.6Z"/><path d="M12 6.2v11.6"/></svg>
+    말씀
+  </button>
+  <button class="tab" data-view="records" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h9M4 12h12M4 17.5h7"/><circle cx="18.2" cy="6.5" r="1.4"/><circle cx="20" cy="17.5" r="1.4"/></svg>
+    기록
+  </button>
+  <button class="tab" data-view="calendar" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3.5v4M16 3.5v4"/><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"/></svg>
+    달력
+  </button>
+</nav>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* =========================================================
+     내장 말씀 데이터 (개역개정)
+     ========================================================= */
+  var PASSAGES = [{"t":"나의 목자, 나와 함께하시는 분","ref":"시편 23:1-4","v":[[1,"여호와는 나의 목자시니 내게 부족함이 없으리로다"],[2,"그가 나를 푸른 풀밭에 누이시며 쉴 만한 물 가로 인도하시는도다"],[3,"내 영혼을 소생시키시고 자기 이름을 위하여 의의 길로 인도하시는도다"],[4,"내가 사망의 음침한 골짜기로 다닐지라도 해를 두려워하지 않을 것은 주께서 나와 함께 하심이라 주의 지팡이와 막대기가 나를 안위하시나이다"]],"q":["지금 내 삶에서 ‘부족함이 없음’을 느끼지 못하게 하는 것은 무엇인가요?","사망의 음침한 골짜기 같은 자리에서, 주의 지팡이와 막대기가 나를 어떻게 안위해 왔나요?","오늘 하루, 목자 되신 주께서 나를 어디로 인도하시길 바라나요?"]},{"t":"시냇가에 심은 나무","ref":"시편 1:1-3","v":[[1,"복 있는 사람은 악인들의 꾀를 따르지 아니하며 죄인들의 길에 서지 아니하며 오만한 자들의 자리에 앉지 아니하고"],[2,"오직 여호와의 율법을 즐거워하여 그의 율법을 주야로 묵상하는도다"],[3,"그는 시냇가에 심은 나무가 철을 따라 열매를 맺으며 그 잎사귀가 마르지 아니함 같으니 그가 하는 모든 일이 다 형통하리로다"]],"q":["요즘 내가 가장 자주 머무는 자리(사람·콘텐츠·습관)는 어디인가요?","말씀을 ‘주야로 묵상한다’는 것이 내 하루에서는 어떻게 실현될 수 있을까요?","지금 계절에 잎이 마르지 않으려면, 무엇을 조금 줄이고 무엇을 늘려야 할까요?"]},{"t":"수고하고 무거운 짐 진 자들아","ref":"마태복음 11:28-30","v":[[28,"수고하고 무거운 짐 진 자들아 다 내게로 오라 내가 너희를 쉬게 하리라"],[29,"나는 마음이 온유하고 겸손하니 나의 멍에를 메고 내게 배우라 그리하면 너희 마음이 쉼을 얻으리니"],[30,"이는 내 멍에는 쉽고 내 짐은 가벼움이라 하시니라"]],"q":["지금 내가 지고 있는 무거운 짐은 무엇인가요?","예수님의 온유와 겸손을 배운다면, 오늘 어떤 태도가 달라질까요?","그 짐을 내려놓기 위해 오늘 실제로 할 수 있는 일 한 가지는 무엇인가요?"]},{"t":"오직 여호와를 앙망하는 자는","ref":"이사야 40:28-31","v":[[28,"너는 알지 못하였느냐 듣지 못하였느냐 영원하신 하나님 여호와, 땅 끝까지 창조하신 이는 피곤하지 않으시며 곤비하지 않으시며 명철이 한이 없으시며"],[29,"피곤한 자에게는 능력을 주시며 무능한 자에게는 힘을 더하시나니"],[30,"소년이라도 피곤하며 곤비하며 장정이라도 넘어지며 쓰러지되"],[31,"오직 여호와를 앙망하는 자는 새 힘을 얻으리니 독수리가 날개치며 올라감 같을 것이요 달음박질하여도 곤비하지 아니하겠고 걸어가도 피곤하지 아니하리로다"]],"q":["지금 나를 가장 피곤하게 하는 것은 무엇인가요?","‘앙망한다’는 것이 오늘 내 하루에서 구체적으로 어떤 모습일까요?","새 힘을 얻기 위해 오늘 잠시 멈추고 쉬어야 할 부분은 어디인가요?"]},{"t":"도움은 어디서 오는가","ref":"시편 121:1-4","v":[[1,"내가 산을 향하여 눈을 들리라 나의 도움이 어디서 올까"],[2,"나의 도움은 천지를 지으신 여호와에게서로다"],[3,"여호와께서 너를 실족하지 아니하게 하시며 너를 지키시는 이가 졸지 아니하시리로다"],[4,"이스라엘을 지키시는 이는 졸지도 아니하시고 주무시지도 아니하시리로다"]],"q":["요즘 나는 도움을 어디서 얻으려고 애쓰고 있나요?","졸지도 주무시지도 않고 지키시는 하나님이 지금 내게 어떤 위로가 되나요?","오늘 내가 지켜야 할 것과 하나님께 맡겨야 할 것을 구분해 본다면요?"]},{"t":"흔들려도 두려워하지 않으리","ref":"시편 46:1-3","v":[[1,"하나님은 우리의 피난처시요 힘이시니 환난 중에 만날 큰 도움이시라"],[2,"그러므로 땅이 변하든지 산이 흔들려 바다 가운데에 빠지든지"],[3,"바닷물이 솟아나고 뛰놀든지 그것이 넘침으로 산이 흔들릴지라도 우리는 두려워하지 아니하리로다 (셀라)"]],"q":["지금 내 삶에서 ‘땅이 변하고 산이 흔들리는’ 것처럼 느껴지는 일은 무엇인가요?","피난처가 되시는 하나님을 나는 지금까지 어떻게 경험해 왔나요?","그 흔들림 앞에서 오늘 내가 붙들 수 있는 한 가지 진리는 무엇인가요?"]},{"t":"잠잠히 하나님만","ref":"시편 62:1-2","v":[[1,"나의 영혼이 잠잠히 하나님만 바람이여 나의 구원이 그에게서 나오는도다"],[2,"오직 그만이 나의 반석이시요 나의 구원이시요 나의 요새이시니 내가 크게 흔들리지 아니하리로다"]],"q":["마음이 시끄러울 때 나는 무엇으로 그 소음을 채우나요?","‘잠잠히’ 있기 위해 오늘 비워야 할 것은 무엇일까요?","하나님만 바라볼 때, 내 마음 어느 부분이 평안해질까요?"]},{"t":"파수꾼의 아침","ref":"시편 130:5-6","v":[[5,"나 곧 내 영혼은 여호와를 기다리며 나는 주의 말씀을 바라는도다"],[6,"파수꾼이 아침을 기다림보다 내 영혼이 주를 더 기다리나니 참으로 파수꾼이 아침을 기다림보다 더하도다"]],"q":["지금 내가 기다리는 것은 무엇이며, 그 기다림은 어떤 마음인가요?","파수꾼이 아침을 기다리듯 기다린다는 것은 무엇을 의미할까요?","기다리는 동안 오늘 내가 할 수 있는 작은 일은 무엇인가요?"]},{"t":"아침마다 새로우니","ref":"예레미야애가 3:22-23","v":[[22,"여호와의 인자와 긍휼이 무궁하시므로 우리가 진멸되지 아니함이니이다"],[23,"이것들이 아침마다 새로우니 주의 성실하심이 크시도소이다"]],"q":["어제의 실패나 아픔을 오늘까지 그대로 들고 온 것이 있나요?","‘아침마다 새롭다’는 말씀이 오늘 내게 무엇을 허락하나요?","오늘 새롭게 시작하고 싶은 한 가지는 무엇인가요?"]},{"t":"나로 말미암아 기뻐하시는 하나님","ref":"스바냐 3:17","v":[[17,"너의 하나님 여호와가 너의 가운데에 계시니 그는 구원을 베푸실 전능자이시라 그가 너로 말미암아 기쁨을 이기지 못하시며 너를 잠잠히 사랑하시며 너로 말미암아 즐거이 부르며 기뻐하시리라 하리라"]],"q":["하나님이 나로 인해 기뻐하신다는 사실을 나는 어떻게 받아들이나요?","스스로를 보는 나의 시선과 하나님의 시선이 다른 부분은 어디인가요?","오늘 ‘잠잠히 사랑받는’ 시간을 어떻게 만들 수 있을까요?"]},{"t":"은택을 잊지 않으려","ref":"시편 103:1-5","v":[[1,"내 영혼아 여호와를 송축하라 내 속에 있는 것들아 다 그의 거룩한 이름을 송축하라"],[2,"내 영혼아 여호와를 송축하며 그의 모든 은택을 잊지 말지어다"],[3,"그가 네 모든 죄악을 사하시며 네 모든 병을 고치시며"],[4,"네 생명을 파멸에서 속량하시고 인자와 긍휼로 관을 씌우시며"],[5,"좋은 것으로 네 소원을 만족하게 하사 네 청춘을 독수리 같이 새롭게 하시는도다"]],"q":["최근 내 삶에서 하나님께서 베푸신 은택은 무엇이었나요?","잊기 쉬운 것은 무엇이며, 왜 잊히는 것 같나요?","오늘 내 영혼에게 가장 먼저 들려주고 싶은 감사의 문장은 무엇인가요?"]},{"t":"항상 기뻐하고 쉬지 말고 감사하라","ref":"데살로니가전서 5:16-18","v":[[16,"항상 기뻐하라"],[17,"쉬지 말고 기도하라"],[18,"범사에 감사하라 이것이 그리스도 예수 안에서 너희를 향하신 하나님의 뜻이니라"]],"q":["오늘 감사할 수 있는 작은 것 세 가지는 무엇인가요?","기쁨이 상황이 아니라 하나님의 뜻에 뿌리내린다면 무엇이 달라질까요?","오늘 하루 중 기도로 바꾸고 싶은 순간은 언제인가요?"]},{"t":"가까이 하시는 하나님","ref":"시편 145:18-19","v":[[18,"여호와께서는 자기에게 간구하는 모든 자 곧 진실하게 간구하는 모든 자에게 가까이 하시는도다"],[19,"그는 자기를 경외하는 자들의 소원을 이루시며 또 그들의 부르짖음을 들으사 구원하시리로다"]],"q":["나는 언제 하나님께 가장 진실하게 간구하나요?","‘진실하게 간구한다’는 것이 내 기도에서 어떤 모습일까요?","오늘 꼭 아뢰고 싶은 한 가지를 정해 본다면 무엇인가요?"]},{"t":"염려 대신 기도","ref":"빌립보서 4:6-7","v":[[6,"아무 것도 염려하지 말고 다만 모든 일에 기도와 간구로, 너희 구할 것을 감사함으로 하나님께 아뢰라"],[7,"그리하면 모든 지각에 뛰어난 하나님의 평강이 그리스도 예수 안에서 너희 마음과 생각을 지키시리라"]],"q":["오늘 가장 자주 떠오른 염려는 무엇인가요?","그 염려를 감사함으로 하나님께 아뢴다면 어떻게 달라질까요?","하나님의 평강이 지켜 주길 바라는 마음의 영역은 어디인가요?"]},{"t":"염려를 다 맡기라","ref":"베드로전서 5:7","v":[[7,"너희 염려를 다 주께 맡기라 이는 그가 너희를 돌보심이라"]],"q":["마음에 계속 붙잡고 있는 염려는 무엇인가요?","그분이 나를 돌보신다는 것을 나는 어떤 일들로 확인할 수 있나요?","염려를 맡긴 뒤 비워진 자리에 오늘 무엇을 채우고 싶나요?"]},{"t":"나를 살피사","ref":"시편 139:23-24","v":[[23,"하나님이여 나를 살피사 내 마음을 아시며 나를 시험하사 내 뜻을 아옵소서"],[24,"내게 무슨 악한 행위가 있나 보시고 나를 영원한 길로 인도하소서"]],"q":["하나님께 살펴 보이기를 원하는 마음의 자리가 있나요?","‘영원한 길’로 인도받기 위해 지금 고쳐야 할 습관은 무엇인가요?","살피심을 받는 것이 위협이 아니라 사랑인 이유는 무엇일까요?"]},{"t":"내 발에 등, 내 길에 빛","ref":"시편 119:105","v":[[105,"주의 말씀은 내 발에 등이요 내 길에 빛이니이다"]],"q":["오늘 내 앞의 한 걸음을 비추기 위해 필요한 말씀은 무엇일까요?","말씀은 ‘등’이지 온 세상을 비추는 투광등은 아닙니다. 아직 보이지 않는 미래를 어떻게 대할 수 있을까요?","이번 주에 말씀이 구체적으로 방향을 바꾼 결정이 있었나요?"]},{"t":"마음을 다하여 신뢰","ref":"잠언 3:5-6","v":[[5,"너는 마음을 다하여 여호와를 신뢰하고 네 명철을 의지하지 말라"],[6,"너는 범사에 그를 인정하라 그리하면 네 길을 지도하시리라"]],"q":["지금 내가 ‘내 명철’로 붙들고 놓지 못하는 것은 무엇인가요?","‘범사에 그를 인정한다’는 것이 오늘 일상에서 어떻게 보일까요?","길을 지도하시리라는 약속을 믿고 내려놓을 결정은 무엇인가요?"]},{"t":"행사를 맡기라","ref":"잠언 16:3, 9","v":[[3,"너의 행사를 여호와께 맡기라 그리하면 네가 경영하는 것이 이루어지리라"],[9,"사람이 마음으로 자기의 길을 계획할지라도 그의 걸음을 인도하시는 이는 여호와시니라"]],"q":["오늘 내가 계획한 일 중 아직 하나님께 맡기지 못한 것은 무엇인가요?","걸음을 인도하시는 분을 인정할 때, 내 계획은 어떻게 달라질까요?","결과에 대한 조바심을 내려놓으려면 무엇을 기억해야 할까요?"]},{"t":"우리 날 계수함을","ref":"시편 90:12, 14, 17","v":[[12,"우리에게 우리 날 계수함을 가르치사 지혜로운 마음을 얻게 하소서"],[14,"아침에 주의 인자하심이 우리를 만족하게 하사 우리를 일생 동안 즐겁고 기쁘게 하소서"],[17,"주 우리 하나님의 은총을 우리에게 내리게 하사 우리의 손이 행한 일을 우리에게 견고하게 하소서 우리의 손이 행한 일을 견고하게 하소서"]],"q":["요즘 내 날들은 무엇에 가장 많이 쓰이고 있나요?","‘지혜로운 마음’을 얻는다면 오늘 무엇이 달라질까요?","‘우리의 손이 행한 일’ 중 오늘 하나님께 맡기고 싶은 일은 무엇인가요?"]},{"t":"때를 따라 아름답게","ref":"전도서 3:1, 11","v":[[1,"범사에 기한이 있고 천하 만사가 다 때가 있나니"],[11,"하나님이 모든 것을 지으시되 때를 따라 아름답게 하셨고 또 사람들에게는 영원을 사모하는 마음을 주셨느니라 그러나 하나님이 하시는 일의 시종을 사람으로 측량할 수 없게 하셨도다"]],"q":["지금 내 삶은 어떤 계절인가요?","다른 계절을 부러워하며 놓치고 있는 이 계절의 아름다움은 무엇일까요?","하나님의 때를 신뢰하기 위해 오늘 내려놓을 조급함은 무엇인가요?"]},{"t":"마음을 지키라","ref":"잠언 4:23","v":[[23,"모든 지킬 만한 것 중에 더욱 네 마음을 지키라 생명의 근원이 이에서 남이니라"]],"q":["최근 내 마음의 생명을 빼앗아 간 것은 무엇인가요?","마음을 지키기 위해 오늘 세울 작은 울타리는 무엇일까요?","내가 마음에 들여보내는 것 중 바꾸어야 할 입력은 무엇인가요?"]},{"t":"견고한 망대","ref":"잠언 18:10","v":[[10,"여호와의 이름은 견고한 망대라 의인은 그리로 달려가서 안전함을 얻느니라"]],"q":["두렵거나 급할 때 나는 주로 어디로 달려가나요?","여호와의 이름으로 달려가 안전을 얻는다는 것이 내게 어떤 의미인가요?","오늘 그 이름을 부를 상황을 미리 떠올린다면 어떤 순간인가요?"]},{"t":"두려워하지 말라","ref":"이사야 41:10","v":[[10,"두려워하지 말라 내가 너와 함께 함이라 놀라지 말라 나는 네 하나님이 됨이라 내가 너를 굳세게 하리라 참으로 너를 도와 주리라 참으로 나의 의로운 오른손으로 너를 붙들리라"]],"q":["지금 내 마음에 가장 크게 자리한 두려움은 무엇인가요?","‘내가 너와 함께 함이라’는 말씀이 오늘 어디에 닿나요?","그 두려움 앞에서 오늘 내디딜 첫걸음은 무엇인가요?"]},{"t":"너는 내 것이라","ref":"이사야 43:1-3","v":[[1,"야곱아 너를 창조하신 여호와께서 지금 말씀하시느니라 이스라엘아 너를 지으신 이가 말씀하시느니라 너는 두려워하지 말라 내가 너를 구속하였고 내가 너를 지명하여 불렀나니 너는 내 것이라"],[2,"네가 물 가운데로 지날 때에 내가 너와 함께 할 것이라 강을 건널 때에 물이 너를 침몰하지 못할 것이며 네가 불 가운데로 지날 때에 타지도 아니할 것이요 불꽃이 너를 사르지도 못하리니"],[3,"대저 나는 여호와 네 하나님이요 이스라엘의 거룩한 이요 네 구원자임이라 내가 애굽을 너의 속량물로, 구스와 스바를 너를 대신하여 주었노라"]],"q":["내 이름을 지명하여 부르셨다는 사실이 내 정체성에 어떤 빛을 주나요?","지금 내가 지나고 있는 ‘물’과 ‘불’은 무엇인가요?","함께 지나가시는 분을 기억할 때 오늘의 두려움은 어떻게 달라질까요?"]},{"t":"평안이요, 미래와 희망","ref":"예레미야 29:11-13","v":[[11,"여호와의 말씀이니라 너희를 향한 나의 생각을 내가 아나니 평안이요 재앙이 아니니라 너희에게 미래와 희망을 주는 것이니라"],[12,"너희가 내게 부르짖으며 내게 와서 기도하면 내가 너희들의 기도를 들을 것이요"],[13,"너희가 온 마음으로 나를 구하면 나를 찾을 것이요 나를 만나리라"]],"q":["하나님의 생각이 나의 계획과 다르게 느껴졌던 때가 있었나요?","‘온 마음으로 나를 구하면’ — 지금 내 마음은 얼마쯤 하나님을 향해 있나요?","오늘 그분을 찾는 구체적인 시간과 장소를 정해 본다면요?"]},{"t":"합력하여 선을","ref":"로마서 8:28","v":[[28,"우리가 알거니와 하나님을 사랑하는 자 곧 그의 뜻대로 부르심을 입은 자들에게는 모든 것이 합력하여 선을 이루느니라"]],"q":["지금은 이해되지 않는 상황이 있나요?","‘모든 것이 합력하여 선을 이룬다’는 약속을 믿기 어려운 부분은 어디인가요?","훗날 돌아볼 때 하나님의 선하심을 발견하고 싶은 영역은 무엇인가요?"]},{"t":"환난은 인내를, 인내는 소망을","ref":"로마서 5:3-5","v":[[3,"다만 이뿐 아니라 우리가 환난 중에도 즐거워하나니 이는 환난은 인내를,"],[4,"인내는 연단을, 연단은 소망을 이루는 줄 앎이로다"],[5,"소망이 우리를 부끄럽게 하지 아니함은 우리에게 주신 성령으로 말미암아 하나님의 사랑이 우리 마음에 부은 바 됨이니"]],"q":["지금 나를 연단하고 있는 환난은 무엇인가요?","그 과정에서 자라고 있는 인내는 무엇인가요?","소망을 붙들게 하는 하나님의 사랑을 오늘 어떻게 확인할 수 있을까요?"]},{"t":"시련이 인내를 만들어 내는 줄","ref":"야고보서 1:2-4","v":[[2,"내 형제들아 너희가 여러 가지 시험을 당하거든 온전히 기쁘게 여기라"],[3,"이는 너희 믿음의 시련이 인내를 만들어 내는 줄 너희가 앎이라"],[4,"인내를 온전히 이루라 이는 너희로 온전하고 구비하여 조금도 부족함이 없게 하려 함이라"]],"q":["지금 겪는 시험을 ‘온전히 기쁘게’ 여기기 어려운 이유는 무엇인가요?","이 시련이 내 안에 만들어 내는 인내는 무엇인가요?","온전해지려면 오늘 포기해야 할 조급한 해결책은 무엇인가요?"]},{"t":"믿음은 바라는 것들의 실상","ref":"히브리서 11:1","v":[[1,"믿음은 바라는 것들의 실상이요 보이지 않는 것들의 증거니"]],"q":["지금 내가 바라는 것은 무엇인가요?","보이지 않는 것을 증거하는 믿음이 요즘 내 삶에서 어떻게 나타나고 있나요?","그 바람을 붙들고 오늘 내디딜 첫걸음은 무엇인가요?"]},{"t":"은혜의 보좌 앞에","ref":"히브리서 4:15-16","v":[[15,"우리에게 있는 대제사장은 우리의 연약함을 동정하지 못하실 이가 아니요 모든 일에 우리와 똑같이 시험을 받으신 이로되 죄는 없으시니라"],[16,"그러므로 우리는 긍휼하심을 받고 때를 따라 돕는 은혜를 얻기 위하여 은혜의 보좌 앞에 담대히 나아갈 것이니라"]],"q":["나의 연약함 중에서 가장 잘 숨기는 것은 무엇인가요?","나도 똑같이 시험을 받으신 대제사장이 있다는 사실이 주는 위로는 무엇인가요?","담대히 나아갈 때 가장 먼저 아뢰고 싶은 것은 무엇인가요?"]},{"t":"사랑 안에 두려움이 없고","ref":"요한일서 4:18-19","v":[[18,"사랑 안에 두려움이 없고 온전한 사랑이 두려움을 내쫓나니 두려움에는 형벌이 있음이라 두려워하는 자는 사랑 안에서 온전히 이루지 못하였느니라"],[19,"우리가 사랑함은 그가 먼저 우리를 사랑하셨음이라"]],"q":["나를 움츠리게 하는 두려움은 무엇인가요?","형벌에 대한 두려움과 사랑받는 확신 중, 나는 지금 어디에 더 서 있나요?","먼저 사랑하신 그 사랑을 오늘 누구에게 흘려보낼 수 있을까요?"]},{"t":"태초에 말씀이 계시니라","ref":"요한복음 1:1-5","v":[[1,"태초에 말씀이 계시니라 이 말씀이 하나님과 함께 계셨으니 이 말씀은 곧 하나님이시니라"],[2,"그가 태초에 하나님과 함께 계셨고"],[3,"만물이 그로 말미암아 지은 바 되었으니 지은 것이 하나도 그가 없이는 된 것이 없느니라"],[4,"그 안에 생명이 있었으니 이 생명은 사람들의 빛이라"],[5,"빛이 어둠에 비치되 어둠이 깨닫지 못하더라"]],"q":["오늘 내 삶의 어둠은 어떤 자리에 있나요?","말씀 되신 예수님이 내 일상에 오시면 무엇이 달라질까요?","이번 주에 말씀을 가까이하는 시간을 어떻게 마련할 수 있을까요?"]},{"t":"이처럼 사랑하사","ref":"요한복음 3:16-17","v":[[16,"하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니 이는 그를 믿는 자마다 멸망하지 않고 영생을 얻게 하려 하심이라"],[17,"하나님이 그 아들을 세상에 보내신 것은 세상을 심판하려 하심이 아니요 그로 말미암아 세상이 구원을 받게 하려 하심이라"]],"q":["‘이처럼’이라는 단어 앞에서 나는 무엇을 느끼나요?","심판이 아니라 구원을 원하시는 마음을 나는 어떻게 경험해 왔나요?","사랑받은 사람으로서 오늘 누구에게 무엇을 건넬 수 있을까요?"]},{"t":"세상의 빛","ref":"요한복음 8:12","v":[[12,"예수께서 또 말씀하여 이르시되 나는 세상의 빛이니 나를 따르는 자는 어둠에 다니지 아니하고 생명의 빛을 얻으리라"]],"q":["빛을 따라간다는 것이 오늘 내 하루에서 무엇을 뜻하나요?","어둠에 다니지 않으려면 지금 정리해야 할 것이 있나요?","오늘 내가 작은 빛이 되어 줄 수 있는 사람은 누구인가요?"]},{"t":"근심하지 말라","ref":"요한복음 14:1, 27","v":[[1,"너희는 마음에 근심하지 말라 하나님을 믿으니 또 나를 믿으라"],[27,"평안을 너희에게 끼치노니 곧 나의 평안을 너희에게 주노라 내가 너희에게 주는 것은 세상이 주는 것과 같지 아니하니라 너희는 마음에 근심하지도 말고 두려워하지도 말라"]],"q":["지금 마음에 자리한 근심은 무엇인가요?","세상이 주는 것과 같지 않은 평안은 무엇이 다를까요?","근심을 주님께 넘긴다면 오늘 밤의 내 마음은 어떨까요?"]},{"t":"포도나무와 가지","ref":"요한복음 15:5","v":[[5,"나는 포도나무요 너희는 가지라 그가 내 안에, 내가 그 안에 거하면 사람이 열매를 많이 맺나니 나를 떠나서는 너희가 아무 것도 할 수 없음이라"]],"q":["나는 요즘 ‘붙어 있음’과 ‘떨어져 있음’ 중 어디에 더 가까운가요?","열매를 맺으려 애쓰는 것과 가지로 머무는 것은 어떻게 다른가요?","오늘 주님 안에 거하는 방법을 하나 정해 본다면 무엇인가요?"]},{"t":"심령이 가난한 자는 복이 있나니","ref":"마태복음 5:3-5","v":[[3,"심령이 가난한 자는 복이 있나니 천국이 그들의 것임이요"],[4,"애통하는 자는 복이 있나니 그들이 위로를 받을 것임이요"],[5,"온유한 자는 복이 있나니 그들이 땅을 기업으로 받을 것임이요"]],"q":["‘심령이 가난하다’는 것이 내게 어떤 의미인가요?","애통하는 마음을 억누르지 않고 하나님 앞에 가져갈 수 있나요?","온유함이 필요한 오늘의 관계나 상황은 무엇인가요?"]},{"t":"먼저 그의 나라와 그의 의를","ref":"마태복음 6:31-34","v":[[31,"그러므로 염려하여 이르기를 무엇을 먹을까 무엇을 마실까 무엇을 입을까 하지 말라"],[32,"이는 다 이방인들이 구하는 것이라 너희 하늘 아버지께서 이 모든 것이 너희에게 있어야 할 줄을 아시느니라"],[33,"그런즉 너희는 먼저 그의 나라와 그의 의를 구하라 그리하면 이 모든 것을 너희에게 더하시리라"],[34,"그러므로 내일 일을 위하여 염려하지 말라 내일 일은 내일이 염려할 것이요 한 날의 괴로움은 그 날로 족하니라"]],"q":["요즘 나를 가장 자주 염려하게 하는 것은 무엇인가요?","‘먼저’라는 말이 오늘 내 일정의 순서를 어떻게 바꾸나요?","한 날의 괴로움은 그 날로 족하다는 말씀을 오늘 어떻게 살아낼까요?"]},{"t":"마음을 다하고 목숨을 다하고","ref":"마태복음 22:37-39","v":[[37,"예수께서 이르시되 네 마음을 다하고 목숨을 다하고 뜻을 다하여 주 너의 하나님을 사랑하라 하셨으니"],[38,"이것이 크고 첫째 되는 계명이요"],[39,"둘째도 그와 같으니 네 이웃을 네 자신 같이 사랑하라 하셨으니"]],"q":["마음과 목숨과 뜻을 다해 사랑한다는 것이 지금의 나에게는 어떤 모습인가요?","‘이웃’이라고 부르기 어려운 사람이 떠오르나요?","나를 사랑하는 일과 이웃을 사랑하는 일이 오늘 어떻게 이어질 수 있을까요?"]},{"t":"거룩한 산 제물","ref":"로마서 12:1-2","v":[[1,"그러므로 형제들아 내가 하나님의 모든 자비하심으로 너희를 권하노니 너희 몸을 하나님이 기뻐하시는 거룩한 산 제물로 드리라 이는 너희가 드릴 영적 예배니라"],[2,"너희는 이 세대를 본받지 말고 오직 마음을 새롭게 함으로 변화를 받아 하나님의 선하시고 기뻐하시고 온전하신 뜻이 무엇인지 분별하도록 하라"]],"q":["오늘 내 몸과 시간으로 드리는 예배는 어떤 모습일 수 있나요?","‘본받지 말고’ — 이 세대의 어떤 방식에서 벗어나야 할까요?","마음이 새롭게 될 때 분별하게 되는 것은 무엇인가요?"]},{"t":"성령의 열매","ref":"갈라디아서 5:22-23","v":[[22,"오직 성령의 열매는 사랑과 희락과 화평과 오래 참음과 자비와 양선과 충성과"],[23,"온유와 절제니 이같은 것을 금지할 법이 없느니라"]],"q":["요즘 내 삶에서 열매로 보이는 것은 무엇인가요?","이 중에서 지금 가장 부족한 열매는 무엇인가요?","그 열매를 내가 만들어 내려 하지 않고 성령께 맡기려면 어떻게 해야 할까요?"]},{"t":"은혜로 받은 구원","ref":"에베소서 2:8-10","v":[[8,"너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요 하나님의 선물이라"],[9,"행위에서 난 것이 아니니 이는 누구든지 자랑하지 못하게 함이라"],[10,"우리는 그가 만드신 바라 그리스도 예수 안에서 선한 일을 위하여 지으심을 받은 자니 이 일은 하나님이 전에 예비하사 우리로 그 가운데서 행하게 하려 하심이니라"]],"q":["무언가 해내야 사랑받는다는 마음이 아직 남아 있나요?","‘하나님의 선물’이라는 말이 내게 어떤 쉼을 주나요?","오늘 내게 예비된 선한 일은 무엇이라고 생각하나요?"]},{"t":"사랑을 더하라","ref":"골로새서 3:12-14","v":[[12,"그러므로 너희는 하나님이 택하사 거룩하고 사랑 받는 자처럼 긍휼과 자비와 겸손과 온유와 오래 참음을 옷 입고"],[13,"누가 누구에게 불만이 있거든 서로 용납하여 피차 용서하되 주께서 너희를 용서하신 것 같이 너희도 그리하고"],[14,"이 모든 것 위에 사랑을 더하라 이는 온전하게 매는 띠니라"]],"q":["최근 누군가를 용서하기 어려웠던 일이 있나요?","‘입는’ 것처럼 오늘 내가 걸쳐야 할 태도는 무엇인가요?","사랑이 ‘온전하게 매는 띠’가 되도록 오늘 할 수 있는 일은 무엇인가요?"]},{"t":"정의와 인자와 겸손","ref":"미가 6:8","v":[[8,"사람아 주께서 선한 것이 무엇임을 네게 보이셨나니 여호와께서 네게 구하시는 것은 오직 정의를 행하며 인자를 사랑하며 겸손하게 네 하나님과 함께 행하는 것이 아니냐"]],"q":["오늘 내 앞에 놓인 ‘정의를 행하는’ 일은 무엇인가요?","‘인자를 사랑한다’는 것이 관계 속에서 어떻게 나타날까요?","겸손하게 하나님과 함께 행한다는 것이 오늘의 선택에 어떻게 적용되나요?"]},{"t":"이루실 줄을 확신하노라","ref":"빌립보서 1:6","v":[[6,"너희 안에서 착한 일을 시작하신 이가 그리스도 예수의 날까지 이루실 줄을 우리는 확신하노라"]],"q":["내 안에서 시작하신 착한 일은 무엇이라고 생각하나요?","더디게 느껴지는 변화에 조급해진 적이 있나요?","이루실 분이 하나님이심을 믿고 오늘 계속할 한 가지는 무엇인가요?"]},{"t":"자족하기를 배웠노니","ref":"빌립보서 4:11-13","v":[[11,"내가 궁핍하므로 말하는 것이 아니니라 어떠한 형편에든지 나는 자족하기를 배웠노니"],[12,"나는 비천에 처할 줄도 알고 풍부에 처할 줄도 알아 모든 일 곧 배부름과 배고픔과 풍부와 궁핍에도 처할 줄 아는 일체의 비결을 배웠노라"],[13,"내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라"]],"q":["나는 지금 어떤 형편에 있나요?","자족이 ‘배우는’ 것임을 기억할 때, 오늘 연습할 것은 무엇인가요?","‘내게 능력 주시는 자 안에서’ — 오늘 내 한계 앞에서 기도할 한 가지는 무엇인가요?"]},{"t":"끊을 수 없는 사랑","ref":"로마서 8:38-39","v":[[38,"내가 확신하노니 사망이나 생명이나 천사들이나 권세자들이나 현재 일이나 장래 일이나 능력이나"],[39,"높음이나 깊음이나 다른 어떤 피조물이라도 우리를 우리 주 그리스도 예수 안에 있는 하나님의 사랑에서 끊을 수 없으리라"]],"q":["하나님의 사랑에서 나를 떼어내려 애쓰는 생각은 무엇인가요?","어떤 피조물도 끊을 수 없다는 말씀이 오늘 내게 어떤 확신을 주나요?","이 사랑을 기억할 표지 하나를 오늘 마음에 새긴다면 무엇인가요?"]},{"t":"복을 주시고 지키시기를","ref":"민수기 6:24-26","v":[[24,"여호와는 네게 복을 주시고 너를 지키시기를 원하며"],[25,"여호와는 그의 얼굴을 네게 비추사 은혜 베푸시기를 원하며"],[26,"여호와는 그 얼굴을 네게로 향하여 드사 평강 주시기를 원하노라 할지니라 하라"]],"q":["지금 내가 가장 복을 구하고 싶은 영역은 어디인가요?","하나님의 얼굴이 내게 비추인다는 것을 오늘 어떻게 느낄 수 있을까요?","이 축복을 오늘 누구에게 그대로 전해 줄 수 있을까요?"]},{"t":"세상 끝날까지 함께","ref":"마태복음 28:20","v":[[20,"내가 너희에게 분부한 모든 것을 가르쳐 지키게 하라 볼지어다 내가 세상 끝날까지 너희와 항상 함께 있으리라 하시니라"]],"q":["‘항상 함께 있으리라’는 약속이 오늘 내게 가장 필요한 자리는 어디인가요?","혼자 감당한다고 느끼는 일이 있나요?","그 자리로 함께 가시는 주님을 의식하며 오늘 무엇을 할 수 있을까요?"]}];
+
+  var KEY = 'qt_meditation_v1';
+  var N = PASSAGES.length;
+  var FIELDS = ['o','m','a','p'];
+  var WEEK = ['일','월','화','수','목','금','토'];
+  var LABELS = {o:'와닿은 구절 · 관찰', m:'나에게 주시는 메시지', a:'오늘의 적용', p:'기도'};
+
+  /* ---------- utils ---------- */
+  function $(sel, root){ return (root || document).querySelector(sel); }
+  function $$(sel, root){ return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function pad2(n){ return n < 10 ? '0' + n : '' + n; }
+  function ymd(d){ return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+  function parseYmd(s){ var p = String(s).split('-'); return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2])); }
+  function todayStr(){ return ymd(new Date()); }
+  function dayDiff(a, b){ var A = parseYmd(a), B = parseYmd(b); return Math.round((B.getTime() - A.getTime()) / 86400000); }
+  function shiftDate(s, n){ var d = parseYmd(s); d.setDate(d.getDate() + n); return ymd(d); }
+  function fmtKo(s){ var d = parseYmd(s); return d.getFullYear() + '년 ' + (d.getMonth() + 1) + '월 ' + d.getDate() + '일 (' + WEEK[d.getDay()] + ')'; }
+  function fmtShort(s){ var d = parseYmd(s); return (d.getMonth() + 1) + '월 ' + d.getDate() + '일 (' + WEEK[d.getDay()] + ')'; }
+  function timeText(ts){ var d = new Date(ts); return pad2(d.getHours()) + ':' + pad2(d.getMinutes()); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
+  function str(v){ return typeof v === 'string' ? v : ''; }
+
+  var toastTimer = null;
+  function toast(msg){
+    var el = $('#toast');
+    el.textContent = msg;
+    el.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.classList.remove('show'); }, 2600);
+  }
+
+  /* ---------- state ---------- */
+  function blankEntry(){ return {o:'', m:'', a:'', p:'', done:false, updated:0}; }
+  function freshState(){ return {version:1, entries:{}, custom:{}, settings:{font:0, theme:'light'}, meta:{}}; }
+
+  function normalizeState(raw){
+    var s = (raw && typeof raw === 'object') ? raw : {};
+    var out = freshState();
+    out.version = 1;
+    if (s.meta && typeof s.meta === 'object') out.meta = s.meta;
+    if (s.entries && typeof s.entries === 'object') out.entries = s.entries;
+    if (s.custom && typeof s.custom === 'object') out.custom = s.custom;
+    if (s.settings && typeof s.settings === 'object'){
+      out.settings.font = (s.settings.font === 1 || s.settings.font === 2) ? s.settings.font : 0;
+      out.settings.theme = (s.settings.theme === 'dark') ? 'dark' : 'light';
+    }
+    return out;
+  }
+
+  function loadState(){
+    var raw = null;
+    try { raw = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch(e){ raw = null; }
+    return normalizeState(raw);
+  }
+
+  var S = loadState();
+  var cur = todayStr();
+  var saveTimer = null;
+  var speaking = false;
+  var calY = 0, calM = 0, selDate = null;
+
+  function persist(){
+    try { localStorage.setItem(KEY, JSON.stringify(S)); return true; }
+    catch(e){ toast('기기에 저장하지 못했어요. 공간을 확인해 주세요.'); return false; }
+  }
+
+  function entryOf(d){
+    var e = S.entries[d];
+    if (!e) return blankEntry();
+    return {o:str(e.o), m:str(e.m), a:str(e.a), p:str(e.p), done:!!e.done, updated:Number(e.updated) || 0};
+  }
+  function ensureEntry(d){
+    if (!S.entries[d]) S.entries[d] = blankEntry();
+    var e = S.entries[d];
+    FIELDS.forEach(function(f){ if (typeof e[f] !== 'string') e[f] = ''; });
+    if (typeof e.done !== 'boolean') e.done = !!e.done;
+    if (typeof e.updated !== 'number') e.updated = Number(e.updated) || 0;
+    return e;
+  }
+  function hasContent(e){ return FIELDS.some(function(f){ return (e[f] || '').trim().length > 0; }); }
+
+  function anchorDay(){
+    var a = (S.meta && S.meta.firstDay) ? S.meta.firstDay : '';
+    return /^\d{4}-\d{2}-\d{2}$/.test(a) ? a : todayStr();
+  }
+  function dayNumber(d){
+    var idx = ((dayDiff(anchorDay(), d) % N) + N) % N;
+    return idx + 1;
+  }
+  function passageFor(d){
+    if (S.custom[d] && S.custom[d].v && S.custom[d].v.length){
+      var c = S.custom[d];
+      return {t:str(c.t) || '나의 본문', ref:str(c.ref), v:c.v, q:(Array.isArray(c.q) ? c.q : []), day:dayNumber(d), isCustom:true};
+    }
+    var idx = ((dayDiff(anchorDay(), d) % N) + N) % N;
+    var p = PASSAGES[idx];
+    return {t:p.t, ref:p.ref, v:p.v, q:p.q, day:idx + 1, isCustom:false};
+  }
+
+  /* ---------- theme & font ---------- */
+  var FONT_SIZES = ['16px', '17.5px', '19.5px'];
+  var FONT_NAMES = ['보통', '크게', '아주 크게'];
+  var MOON = '<path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z"/>';
+  var SUN = '<circle cx="12" cy="12" r="4.2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/>';
+
+  function applyFont(){
+    var f = (S.settings.font === 1 || S.settings.font === 2) ? S.settings.font : 0;
+    document.documentElement.style.fontSize = FONT_SIZES[f];
+    var g = $('#fontGlyph');
+    if (g) g.style.fontSize = ['0.95rem', '1.06rem', '1.16rem'][f];
+  }
+  function applyTheme(){
+    var t = S.settings.theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+    var m = $('#metaTheme');
+    if (m) m.setAttribute('content', t === 'dark' ? '#16140F' : '#F7F1E4');
+    var ic = $('#themeIcon');
+    if (ic) ic.innerHTML = (t === 'dark') ? MOON : SUN;
+    var b = $('#btnTheme');
+    if (b) b.setAttribute('aria-label', t === 'dark' ? '라이트 모드로 바꾸기' : '다크 모드로 바꾸기');
+  }
+
+  /* ---------- today view ---------- */
+  function renderDateBar(){
+    var t = todayStr();
+    $('#dateLabel').textContent = fmtKo(cur);
+    var diff = dayDiff(t, cur);
+    var sub;
+    if (diff === 0) sub = '오늘의 말씀';
+    else if (diff === -1) sub = '어제 · 지난 묵상';
+    else if (diff === 1) sub = '내일 · 미리 읽어 보기';
+    else if (diff < 0) sub = Math.abs(diff) + '일 전';
+    else sub = diff + '일 뒤';
+    $('#dateSub').textContent = sub;
+    $('#btnToday').hidden = (cur === t);
+  }
+
+  function renderPassage(){
+    var p = passageFor(cur);
+    $('#dayBadge').textContent = 'DAY ' + p.day;
+    $('#passageTitle').textContent = p.t;
+    $('#passageRef').textContent = p.ref;
+    var multi = p.v.length > 1;
+    $('#verseText').className = 'verse' + (p.v.length > 1 ? ' multi' : '');
+    $('#verseText').innerHTML = p.v.map(function(row){
+      var n = row[0], tx = row[1];
+      return '<p>' + (multi ? '<span class="vn">' + esc(n) + '</span>' : '') + esc(tx) + '</p>';
+    }).join('');
+    var qs = (p.q && p.q.length) ? p.q : [];
+    $('#questionList').innerHTML = qs.map(function(q){ return '<li>' + esc(q) + '</li>'; }).join('')
+      || '<li>이 말씀 앞에 잠시 머물러 보세요.</li>';
+    var tag = $('#customTag');
+    if (tag) tag.hidden = !p.isCustom;
+    var rs = $('#btnResetPassage');
+    if (rs) rs.hidden = !p.isCustom;
+  }
+
+  function renderJournal(){
+    var e = entryOf(cur);
+    FIELDS.forEach(function(f){
+      var ta = $('#ta-' + f);
+      if (ta) ta.value = e[f];
+      var step = $('#step-' + f);
+      if (step) step.classList.toggle('filled', e[f].trim().length > 0);
+    });
+    var pill = $('#statusPill');
+    pill.textContent = e.done ? '묵상 완료' : (hasContent(e) ? '작성 중' : '시작 전');
+    pill.classList.toggle('done', e.done);
+
+    var btn = $('#btnComplete');
+    if (e.done){
+      btn.textContent = '완료 취소';
+      btn.className = 'btn ghost';
+      btn.dataset.done = '1';
+    } else {
+      btn.textContent = '묵상 완료';
+      btn.className = 'btn primary';
+      btn.dataset.done = '0';
+    }
+    var st = $('#saveStateText');
+    st.textContent = e.updated ? '마지막 저장 · ' + timeText(e.updated) : '';
+    $('#saveState').classList.remove('busy');
+  }
+
+  function computeStats(){
+    var done = Object.keys(S.entries).filter(function(d){
+      return S.entries[d] && S.entries[d].done && /^\d{4}-\d{2}-\d{2}$/.test(d);
+    }).sort();
+    var set = {};
+    done.forEach(function(d){ set[d] = true; });
+    var total = done.length;
+
+    var t = todayStr();
+    var probe = t;
+    if (!set[probe]) probe = shiftDate(t, -1);
+    var curStreak = 0;
+    while (set[probe]){ curStreak++; probe = shiftDate(probe, -1); }
+
+    var best = 0, run = 0, prev = null;
+    for (var i = 0; i < done.length; i++){
+      var d = done[i];
+      if (prev && dayDiff(prev, d) === 1) run++; else run = 1;
+      if (run > best) best = run;
+      prev = d;
+    }
+    return {total: total, cur: curStreak, best: best};
+  }
+
+  function renderStreakChip(){
+    var st = computeStats();
+    var el = $('#streakChipText');
+    if (!el) return;
+    if (st.cur > 0) el.textContent = st.cur + '일 연속 묵상 중 · 누적 ' + st.total + '회';
+    else if (st.total > 0) el.textContent = '누적 ' + st.total + '회 · 오늘도 이어 가 볼까요';
+    else el.textContent = '첫 묵상을 시작해 보세요';
+  }
+
+  function renderStats(){
+    var st = computeStats();
+    $('#streakNum').textContent = st.cur;
+    $('#totalNum').textContent = st.total;
+    $('#bestNum').textContent = st.best;
+  }
+
+  function renderToday(){
+    renderDateBar();
+    renderPassage();
+    renderJournal();
+    renderStreakChip();
+  }
+
+  /* ---------- saving ---------- */
+  function flushSave(){
+    clearTimeout(saveTimer);
+    saveTimer = null;
+    var e = S.entries[cur];
+    if (!e) return;
+    e.updated = Date.now();
+    if (persist()){
+      $('#saveStateText').textContent = '마지막 저장 · ' + timeText(e.updated);
+      $('#saveState').classList.remove('busy');
+    }
+  }
+
+  function markDirty(){
+    var e = S.entries[cur];
+    var st = $('#saveState');
+    if (st) st.classList.add('busy');
+    var tx = $('#saveStateText');
+    if (tx) tx.textContent = '저장 중…';
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){
+      if (!S.entries[cur]) return;
+      flushSave();
+    }, 650);
+  }
+
+  function onFieldInput(field, el){
+    var e = ensureEntry(cur);
+    e[field] = el.value;
+    e.updated = Date.now();
+    var step = $('#step-' + field);
+    if (step) step.classList.toggle('filled', el.value.trim().length > 0);
+    var pill = $('#statusPill');
+    if (pill && !e.done){
+      pill.textContent = hasContent(entryOf(cur)) ? '작성 중' : '시작 전';
+    }
+    markDirty();
+  }
+
+  /* ---------- speech ---------- */
+  function speechSupport(){ return typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined'; }
+
+  function updateSpeakBtn(){
+    var b = $('#btnSpeak'), l = $('#speakLabel');
+    if (!b || !l) return;
+    if (speaking){ l.textContent = '읽는 중 · 정지'; b.classList.add('on'); }
+    else { l.textContent = '말씀 듣기'; b.classList.remove('on'); }
+  }
+
+  function stopSpeak(){
+    if (!speechSupport()) return;
+    try { window.speechSynthesis.cancel(); } catch(e){}
+    speaking = false;
+    updateSpeakBtn();
+  }
+
+  function speakToggle(){
+    if (!speechSupport()){
+      toast('이 브라우저에서는 읽어주기를 지원하지 않아요.');
+      return;
+    }
+    if (speaking){ stopSpeak(); return; }
+    var p = passageFor(cur);
+    var body = p.t + '. ' + (p.ref ? p.ref + '. ' : '') + p.v.map(function(r){ return r[1]; }).join(' ');
+    var u = new SpeechSynthesisUtterance(body);
+    u.lang = 'ko-KR';
+    u.rate = 0.95;
+    u.pitch = 1;
+    try {
+      var voices = window.speechSynthesis.getVoices() || [];
+      var ko = voices.filter(function(v){ return /^ko([-_]|$)/i.test(v.lang); });
+      if (ko.length) u.voice = ko[0];
+    } catch(e){}
+    u.onend = function(){ speaking = false; updateSpeakBtn(); };
+    u.onerror = function(){ speaking = false; updateSpeakBtn(); };
+    try { window.speechSynthesis.cancel(); } catch(e){}
+    window.speechSynthesis.speak(u);
+    speaking = true;
+    updateSpeakBtn();
+  }
+
+  /* ---------- navigation ---------- */
+  function setDate(d, opts){
+    opts = opts || {};
+    flushSave();
+    stopSpeak();
+    cur = d;
+    renderToday();
+    if (opts.scroll === 'top') window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function openDate(d){
+    switchView('today');
+    setDate(d);
+    var card = $('#journalCard');
+    if (card) setTimeout(function(){ card.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+  }
+
+  function switchView(name){
+    stopSpeak();
+    flushSave();
+    $$('.view').forEach(function(v){ v.hidden = (v.id !== 'view-' + name); });
+    $$('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.view === name); });
+    if (name === 'records') renderRecords();
+    if (name === 'calendar'){ renderCalendar(); renderStats(); }
+    if (name === 'today') renderStreakChip();
+    window.scrollTo({top:0, behavior:'auto'});
+  }
+
+  /* ---------- records ---------- */
+  function renderRecords(){
+    var list = $('#recordList');
+    var dates = Object.keys(S.entries).filter(function(d){
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return false;
+      var e = entryOf(d);
+      return hasContent(e) || e.done;
+    }).sort().reverse();
+
+    if (!dates.length){
+      list.innerHTML = '<div class="empty"><span class="em-mark">❧</span><p>아직 기록이 없어요.<br>오늘의 말씀을 읽고 첫 묵상을 남겨 보세요.</p></div>';
+      return;
+    }
+    list.innerHTML = dates.map(function(d){
+      var e = entryOf(d);
+      var p = passageFor(d);
+      var snip = (e.m || e.a || e.o || e.p || '').replace(/\s+/g, ' ').trim();
+      if (snip.length > 90) snip = snip.slice(0, 90) + '…';
+      var badge = e.done ? '<span class="badge done-b">완료</span>' : '<span class="badge">작성 중</span>';
+      return '<button class="rec" type="button" data-date="' + d + '">' +
+        '<div class="rec-top"><span>' + esc(fmtKo(d)) + '</span>' + badge + '</div>' +
+        '<div class="rec-title">' + esc(p.t) + '</div>' +
+        '<div class="rec-snip">' + (snip ? esc(snip) : '본문만 열어 둔 날이에요') + '</div>' +
+        '</button>';
+    }).join('');
+  }
+
+  /* ---------- calendar ---------- */
+  function renderCalendar(){
+    var t = new Date();
+    if (!calY && !calM){} // noop
+    $('#calTitle').textContent = calY + '년 ' + (calM + 1) + '월';
+    var first = new Date(calY, calM, 1);
+    var startWd = first.getDay();
+    var days = new Date(calY, calM + 1, 0).getDate();
+    var tstr = todayStr();
+    var html = WEEK.map(function(w, i){ return '<div class="wd' + (i === 0 ? ' sun' : '') + '">' + w + '</div>'; }).join('');
+    for (var i = 0; i < startWd; i++) html += '<div class="day empty"></div>';
+    for (var d = 1; d <= days; d++){
+      var ds = ymd(new Date(calY, calM, d));
+      var e = S.entries[ds];
+      var done = !!(e && e.done);
+      var draft = !!(e && !e.done && hasContent(entryOf(ds)));
+      var cls = ['day'];
+      if (done) cls.push('done');
+      else if (draft) cls.push('draft');
+      if (ds === tstr) cls.push('today');
+      if (ds === selDate) cls.push('sel');
+      if (dayDiff(tstr, ds) > 0) cls.push('future');
+      var lab = calY + '년 ' + (calM + 1) + '월 ' + d + '일' + (done ? ' 묵상 완료' : draft ? ' 작성 중' : '');
+      html += '<button class="' + cls.join(' ') + '" type="button" data-date="' + ds + '" aria-label="' + esc(lab) + '">' + d + '</button>';
+    }
+    $('#calGrid').innerHTML = html;
+    renderCalDetail();
+  }
+
+  function renderCalDetail(){
+    var box = $('#calDetail');
+    if (!selDate){ box.innerHTML = ''; return; }
+    var p = passageFor(selDate);
+    var e = entryOf(selDate);
+    var st = e.done ? '묵상 완료' : (hasContent(e) ? '작성 중' : '기록 없음');
+    var blocks = FIELDS.map(function(f){
+      if (!e[f] || !e[f].trim()) return '';
+      return '<div class="cd-block"><div class="k">' + esc(LABELS[f]) + '</div><div class="v">' + esc(e[f]) + '</div></div>';
+    }).join('');
+    box.innerHTML =
+      '<div class="cal-detail">' +
+        '<h3>' + esc(fmtKo(selDate)) + '</h3>' +
+        '<div class="cd-ref">' + esc(p.t) + ' · ' + esc(p.ref) + ' · ' + esc(st) + '</div>' +
+        (blocks || '<div class="cd-empty">이 날은 아직 기록이 없어요.</div>') +
+        '<button class="btn tiny" type="button" id="btnOpenDay" data-date="' + selDate + '">이 날 말씀 열기</button>' +
+      '</div>';
+  }
+
+  /* ---------- sheet ---------- */
+  var lastFocus = null;
+  function openSheet(html){
+    lastFocus = document.activeElement;
+    $('#sheet').innerHTML = html;
+    $('#overlay').hidden = false;
+    document.body.style.overflow = 'hidden';
+    var btn = $('#sheet .sheet-close');
+    if (btn) btn.focus();
+  }
+  function closeSheet(){
+    $('#overlay').hidden = true;
+    $('#sheet').innerHTML = '';
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch(e){} }
+    lastFocus = null;
+  }
+  function sheetHead(title){
+    return '<div class="sheet-head"><h2 id="sheetTitle">' + esc(title) + '</h2>' +
+      '<button class="sheet-close" type="button" data-close aria-label="닫기">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>';
+  }
+
+  function openSettings(){
+    var f = S.settings.font, th = S.settings.theme;
+    var html = sheetHead('설정') +
+      '<div class="field"><label>글자 크기</label><div class="seg" id="segFont">' +
+        [0,1,2].map(function(i){ return '<button type="button" class="seg-btn' + (f === i ? ' on' : '') + '" data-font="' + i + '">' + FONT_NAMES[i] + '</button>'; }).join('') +
+      '</div></div>' +
+      '<div class="field"><label>화면</label><div class="seg" id="segTheme">' +
+        '<button type="button" class="seg-btn' + (th === 'light' ? ' on' : '') + '" data-theme="light">미색 종이</button>' +
+        '<button type="button" class="seg-btn' + (th === 'dark' ? ' on' : '') + '" data-theme="dark">어두운 밤</button>' +
+      '</div></div>' +
+      '<div class="field"><label>백업과 복원</label>' +
+        '<div class="row-line"><div><div class="rl-t">JSON으로 내보내기</div><div class="rl-s">모든 묵상 기록을 파일로 저장해요.</div></div><button class="btn tiny" type="button" id="btnExport">내보내기</button></div>' +
+        '<div class="row-line"><div><div class="rl-t">JSON 가져오기</div><div class="rl-s">백업 파일이나 붙여 넣은 내용으로 복원해요.</div></div><button class="btn tiny" type="button" id="btnImport">가져오기</button></div>' +
+      '</div>' +
+      '<div class="field"><label>홈 화면에 추가</label>' +
+        '<p class="note">Safari에서 이 페이지를 연 뒤 <b>공유 → 홈 화면에 추가</b>를 누르면 앱처럼 전체 화면으로 열려요. 한 번 열어 두면 인터넷 없이도 사용할 수 있어요.</p>' +
+      '</div>' +
+      '<div class="field"><label>데이터</label>' +
+        '<div class="row-line"><div><div class="rl-t">모든 기록 지우기</div><div class="rl-s">기기에서 묵상 기록을 모두 삭제해요.</div></div><button class="btn tiny danger" type="button" id="btnReset">지우기</button></div>' +
+      '</div>' +
+      '<p class="note">성경 본문 · 개역개정 (대한성서공회)<br>말씀 묵상 · 매일의 QT · 기록은 이 기기 안에만 저장됩니다.</p>';
+
+    openSheet(html);
+
+    $('#segFont').addEventListener('click', function(ev){
+      var b = ev.target.closest('[data-font]');
+      if (!b) return;
+      S.settings.font = Number(b.dataset.font);
+      applyFont(); persist();
+      $$('#segFont .seg-btn').forEach(function(x){ x.classList.toggle('on', x === b); });
+      toast('글자 크기 · ' + FONT_NAMES[S.settings.font]);
+    });
+    $('#segTheme').addEventListener('click', function(ev){
+      var b = ev.target.closest('[data-theme]');
+      if (!b) return;
+      S.settings.theme = b.dataset.theme;
+      applyTheme(); persist();
+      $$('#segTheme .seg-btn').forEach(function(x){ x.classList.toggle('on', x === b); });
+    });
+    $('#btnExport').addEventListener('click', openExport);
+    $('#btnImport').addEventListener('click', openImport);
+    $('#btnReset').addEventListener('click', function(){
+      if (!window.confirm('모든 묵상 기록과 직접 쓴 본문을 지웁니다. 계속할까요?')) return;
+      if (!window.confirm('되돌릴 수 없어요. 백업하지 않았다면 복구할 수 없습니다. 정말 지울까요?')) return;
+      S = freshState();
+      persist();
+      applyTheme(); applyFont();
+      selDate = null; cur = todayStr();
+      renderToday(); renderStats();
+      closeSheet();
+      toast('모든 기록을 지웠어요.');
+    });
+  }
+
+  function openExport(){
+    var data = {app:'qt-meditation', version:1, exportedAt:new Date().toISOString(), meta:S.meta, entries:S.entries, custom:S.custom, settings:S.settings};
+    var json = JSON.stringify(data, null, 2);
+    var html = sheetHead('백업 내보내기') +
+      '<p class="note" style="margin-top:0">아래 내용이 이 기기의 모든 묵상 기록이에요. 파일로 저장하거나 복사해 두면 나중에 그대로 복원할 수 있어요.</p>' +
+      '<div class="field"><textarea id="exportText" class="mono" readonly>' + esc(json) + '</textarea></div>' +
+      '<div class="sheet-actions">' +
+        '<button class="btn primary" type="button" id="btnDownload">파일로 저장</button>' +
+        '<button class="btn" type="button" id="btnCopy">복사</button>' +
+      '</div>';
+    openSheet(html);
+    $('#btnDownload').addEventListener('click', function(){ downloadJson(json); });
+    $('#btnCopy').addEventListener('click', function(){ copyText(json); });
+  }
+
+  function downloadJson(json){
+    try {
+      var blob = new Blob([json], {type:'application/json'});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '말씀묵상-백업-' + todayStr() + '.json';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){ URL.revokeObjectURL(url); if (a.parentNode) a.parentNode.removeChild(a); }, 1500);
+      toast('백업 파일을 저장했어요. (다운로드 폴더)');
+    } catch(e){ toast('파일 저장이 막혀 있어요. 복사로 보관해 주세요.'); }
+  }
+
+  function copyText(text){
+    function fallback(){
+      var ta = $('#exportText');
+      if (ta){ ta.focus(); ta.select(); }
+      try { document.execCommand('copy'); toast('복사했어요.'); }
+      catch(e){ toast('복사가 안 되면 직접 선택해 주세요.'); }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요.'); }, fallback);
+    } else fallback();
+  }
+
+  function openImport(){
+    var html = sheetHead('백업 가져오기') +
+      '<p class="note" style="margin-top:0">백업 파일을 고르거나, 복사해 둔 JSON을 아래에 붙여 넣어 주세요. 같은 날짜는 더 최근에 저장된 기록이 남아요.</p>' +
+      '<div class="field"><label>파일 선택</label><input type="file" id="importFile" accept="application/json,.json" style="font-size:.85rem"></div>' +
+      '<div class="field"><label>또는 JSON 붙여 넣기</label><textarea id="importText" class="mono" placeholder="{ &quot;entries&quot;: { ... } }"></textarea></div>' +
+      '<div class="sheet-actions"><button class="btn primary" type="button" id="btnDoImport">가져오기</button></div>';
+    openSheet(html);
+
+    $('#importFile').addEventListener('change', function(ev){
+      var file = ev.target.files && ev.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(){ $('#importText').value = String(reader.result || ''); };
+      reader.onerror = function(){ toast('파일을 읽지 못했어요.'); };
+      reader.readAsText(file);
+    });
+    $('#btnDoImport').addEventListener('click', function(){
+      applyImport($('#importText').value);
+    });
+  }
+
+  function sanitizeEntry(v){
+    return {o:str(v.o), m:str(v.m), a:str(v.a), p:str(v.p), done:!!v.done, updated:Number(v.updated) || 0};
+  }
+  function sanitizeCustom(v){
+    if (!v || typeof v !== 'object' || !Array.isArray(v.v)) return null;
+    var verses = v.v.map(function(row, i){
+      if (Array.isArray(row)) return [Number(row[0]) || (i + 1), str(row[1])];
+      if (row && typeof row === 'object') return [Number(row.n) || (i + 1), str(row.t)];
+      return [i + 1, str(row)];
+    }).filter(function(r){ return r[1].trim().length > 0; });
+    if (!verses.length) return null;
+    return {t:str(v.t), ref:str(v.ref), v:verses, q:(Array.isArray(v.q) ? v.q.map(str) : [])};
+  }
+
+  function applyImport(text){
+    var obj;
+    try { obj = JSON.parse(String(text || '').trim()); }
+    catch(e){ toast('JSON을 읽을 수 없어요. 내용을 확인해 주세요.'); return; }
+    if (!obj || typeof obj !== 'object' || (!obj.entries && !obj.custom)){ toast('묵상 백업 파일이 아니에요.'); return; }
+    if (obj.meta && typeof obj.meta === 'object' && /^\d{4}-\d{2}-\d{2}$/.test(obj.meta.firstDay || '') && !(S.meta && S.meta.firstDay)){
+      S.meta = S.meta || {}; S.meta.firstDay = obj.meta.firstDay;
+    }
+
+    var added = 0, updatedCount = 0;
+    var entries = obj.entries || {};
+    Object.keys(entries).forEach(function(d){
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return;
+      var inc = entries[d];
+      if (!inc || typeof inc !== 'object') return;
+      var clean = sanitizeEntry(inc);
+      var have = S.entries[d];
+      if (!have){ S.entries[d] = clean; added++; }
+      else if ((clean.updated || 0) >= (Number(have.updated) || 0)){ S.entries[d] = clean; updatedCount++; }
+    });
+    var custom = obj.custom || {};
+    Object.keys(custom).forEach(function(d){
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return;
+      var c = sanitizeCustom(custom[d]);
+      if (c) S.custom[d] = c;
+    });
+    persist();
+    renderToday(); renderStats();
+    if (cur === todayStr()) renderStreakChip();
+    closeSheet();
+    toast(added || updatedCount ? (added + updatedCount) + '일의 기록을 가져왔어요.' : '새로 가져올 기록이 없었어요.');
+  }
+
+  /* ---------- passage editing ---------- */
+  function openPassageEdit(){
+    var p = passageFor(cur);
+    var vtext = p.v.map(function(r){ return r[1]; }).join('\n');
+    var qtext = (p.q || []).join('\n');
+    var html = sheetHead('본문 수정 · ' + fmtShort(cur)) +
+      '<div class="field"><label>제목</label><input type="text" id="edTitle" value="' + esc(p.t) + '"></div>' +
+      '<div class="field"><label>말씀 참조</label><input type="text" id="edRef" value="' + esc(p.ref) + '" placeholder="예: 시편 23:1-4"></div>' +
+      '<div class="field"><label>본문</label><textarea id="edVerse" rows="7">' + esc(vtext) + '</textarea>' +
+        '<p class="hint">줄을 바꾸면 절이 나뉘어 번호가 붙어요.</p></div>' +
+      '<div class="field"><label>묵상 질문</label><textarea id="edQ" rows="4" placeholder="질문은 한 줄에 하나씩">' + esc(qtext) + '</textarea></div>' +
+      '<div class="sheet-actions">' +
+        '<button class="btn primary" type="button" id="btnSavePassage">저장</button>' +
+        (p.isCustom ? '<button class="btn" type="button" id="btnRestorePassage">원래 본문으로</button>' : '') +
+      '</div>';
+    openSheet(html);
+
+    $('#btnSavePassage').addEventListener('click', function(){
+      var lines = $('#edVerse').value.split('\n').map(function(x){ return x.trim(); }).filter(function(x){ return x.length; });
+      if (!lines.length){ toast('본문을 한 줄 이상 적어 주세요.'); return; }
+      var qs = $('#edQ').value.split('\n').map(function(x){ return x.trim(); }).filter(function(x){ return x.length; });
+      S.custom[cur] = {
+        t: $('#edTitle').value.trim() || '나의 본문',
+        ref: $('#edRef').value.trim(),
+        v: lines.map(function(x, i){ return [i + 1, x]; }),
+        q: qs
+      };
+      persist();
+      renderPassage();
+      closeSheet();
+      toast('이 날의 본문을 저장했어요.');
+    });
+    var restore = $('#btnRestorePassage');
+    if (restore) restore.addEventListener('click', function(){
+      delete S.custom[cur];
+      persist();
+      renderPassage();
+      closeSheet();
+      toast('원래 말씀으로 돌아왔어요.');
+    });
+  }
+
+  /* ---------- completion ---------- */
+  function completeToggle(){
+    var e = ensureEntry(cur);
+    if (!e.done){
+      if (!hasContent(entryOf(cur))){
+        toast('먼저 묵상 내용을 한 줄이라도 적어 주세요.');
+        var first = $('#ta-o');
+        if (first) first.focus();
+        return;
+      }
+      e.done = true;
+      e.updated = Date.now();
+      persist();
+      renderJournal();
+      renderStreakChip();
+      var st = computeStats();
+      toast(st.cur > 1 ? '묵상 완료 · ' + st.cur + '일 연속이에요!' : '묵상 완료로 저장했어요.');
+    } else {
+      if (!window.confirm('이 날의 묵상 완료를 취소할까요? 적어 둔 내용은 그대로 남아요.')) return;
+      e.done = false;
+      e.updated = Date.now();
+      persist();
+      renderJournal();
+      renderStreakChip();
+      toast('완료를 취소했어요.');
+    }
+  }
+
+  function clearDay(){
+    var e = entryOf(cur);
+    if (!hasContent(e) && !e.done){ toast('비울 기록이 없어요.'); return; }
+    if (!window.confirm(fmtShort(cur) + '의 기록을 모두 비울까요? 되돌릴 수 없어요.')) return;
+    delete S.entries[cur];
+    persist();
+    renderJournal();
+    renderStreakChip();
+    toast('이 날의 기록을 비웠어요.');
+  }
+
+  /* ---------- events ---------- */
+  function bind(){
+    $('#prevDay').addEventListener('click', function(){ setDate(shiftDate(cur, -1)); });
+    $('#nextDay').addEventListener('click', function(){ setDate(shiftDate(cur, 1)); });
+    $('#btnToday').addEventListener('click', function(){ setDate(todayStr()); toast('오늘로 돌아왔어요.'); });
+
+    FIELDS.forEach(function(f){
+      var ta = $('#ta-' + f);
+      if (!ta) return;
+      ta.addEventListener('input', function(){ onFieldInput(f, ta); });
+      ta.addEventListener('change', function(){ if (S.entries[cur]) flushSave(); });
+    });
+
+    $('#btnComplete').addEventListener('click', completeToggle);
+    $('#btnClear').addEventListener('click', clearDay);
+    $('#btnSpeak').addEventListener('click', speakToggle);
+    $('#btnEditPassage').addEventListener('click', openPassageEdit);
+    $('#btnResetPassage').addEventListener('click', function(){
+      if (!S.custom[cur]) return;
+      if (!window.confirm('직접 쓴 본문을 지우고 원래 말씀으로 돌아갈까요?')) return;
+      delete S.custom[cur];
+      persist();
+      renderPassage();
+      toast('원래 말씀으로 돌아왔어요.');
+    });
+
+    $('#btnFont').addEventListener('click', function(){
+      S.settings.font = ((S.settings.font || 0) + 1) % 3;
+      applyFont(); persist();
+      toast('글자 크기 · ' + FONT_NAMES[S.settings.font]);
+    });
+    $('#btnTheme').addEventListener('click', function(){
+      S.settings.theme = S.settings.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(); persist();
+      toast(S.settings.theme === 'dark' ? '어두운 밤 모드' : '미색 종이 모드');
+    });
+    $('#btnMenu').addEventListener('click', openSettings);
+
+    document.addEventListener('click', function(ev){
+      var tabEl = ev.target.closest('.tab');
+      if (tabEl){ switchView(tabEl.dataset.view); return; }
+      var rec = ev.target.closest('.rec');
+      if (rec){ openDate(rec.dataset.date); return; }
+      var dayBtn = ev.target.closest('#calGrid .day[data-date]');
+      if (dayBtn){ selDate = dayBtn.dataset.date; renderCalendar(); return; }
+      var openDay = ev.target.closest('#btnOpenDay');
+      if (openDay){ openDate(openDay.dataset.date); return; }
+      if (ev.target.closest('[data-close]')){ closeSheet(); return; }
+      if (ev.target.id === 'overlay'){ closeSheet(); return; }
+    });
+
+    $('#calPrev').addEventListener('click', function(){
+      calM--; if (calM < 0){ calM = 11; calY--; }
+      renderCalendar();
+    });
+    $('#calNext').addEventListener('click', function(){
+      calM++; if (calM > 11){ calM = 0; calY++; }
+      renderCalendar();
+    });
+    $('#calToday').addEventListener('click', function(){
+      var n = new Date(); calY = n.getFullYear(); calM = n.getMonth(); selDate = null; renderCalendar();
+    });
+
+    document.addEventListener('keydown', function(ev){
+      if (ev.key === 'Escape'){ if (!$('#overlay').hidden){ closeSheet(); } return; }
+      var tag = (ev.target && ev.target.tagName) ? ev.target.tagName.toLowerCase() : '';
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+      if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      if ($('#view-today').hidden) return;
+      if (ev.key === 'ArrowLeft'){ setDate(shiftDate(cur, -1)); }
+      else if (ev.key === 'ArrowRight'){ setDate(shiftDate(cur, 1)); }
+    });
+
+    window.addEventListener('pagehide', function(){ stopSpeak(); flushSave(); });
+    document.addEventListener('visibilitychange', function(){ if (document.hidden) flushSave(); });
+
+    if (speechSupport()){
+      try { window.speechSynthesis.onvoiceschanged = function(){}; } catch(e){}
+    } else {
+      var b = $('#btnSpeak');
+      if (b) b.style.display = 'none';
+    }
+  }
+
+  function checkDayRollover(){
+    var t = todayStr();
+    if (t === boot.day) return;
+    var wasToday = (cur === boot.day);
+    boot.day = t;
+    if (wasToday){
+      setDate(t);
+      if (!document.hidden) toast('새로운 하루의 말씀이 도착했어요.');
+    } else {
+      renderDateBar();
+      renderStreakChip();
+    }
+  }
+
+  /* ---------- boot ---------- */
+  function boot(){
+    if (!S.meta || !/^\d{4}-\d{2}-\d{2}$/.test(S.meta.firstDay || '')){
+      S.meta = S.meta || {};
+      S.meta.firstDay = todayStr();
+      persist();
+    }
+    applyTheme();
+    applyFont();
+    var n = new Date();
+    calY = n.getFullYear(); calM = n.getMonth();
+    bind();
+    renderToday();
+    renderStats();
+    updateSpeakBtn();
+
+    // 자정을 넘겨도 '오늘'이 따라가도록
+    boot.day = todayStr();
+    setInterval(checkDayRollover, 30000);
+    document.addEventListener('visibilitychange', function(){ if (!document.hidden) checkDayRollover(); });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+</body>
+</html>
